@@ -30,12 +30,12 @@ function delayedHello(
 export async function greeter(name: string) {
   return await delayedHello(name, Delays.Long);
 }
-import http from 'http';
+import http = require('http');
 
 const hostname = '127.0.0.1';
 const port = 3000;
 
-const server = http.createServer((req, res) => {
+const server = http.createServer((_req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   res.end('Hello World');
