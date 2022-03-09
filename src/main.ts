@@ -1,4 +1,4 @@
-import express = require( 'express' );
+import express from 'express';
 const app = express();
 const port = process.env.PORT || 80; // default port to listen
 
