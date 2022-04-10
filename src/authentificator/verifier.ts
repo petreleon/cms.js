@@ -11,7 +11,7 @@ function verify(req: Request, res: Response, next: NextFunction) {
                     error: 'Failed to authenticate token.'
                 })
             } else {
-                req.headers.user = decoded.username;
+                req.body.user = decoded;
                 next()
             }
         })

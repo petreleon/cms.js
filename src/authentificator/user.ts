@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-
+import { permissionType } from '../services/permissions/permissionTester';
 const userSchema = new Schema({
     username: {
         type: String,
@@ -24,7 +24,11 @@ const userSchema = new Schema({
     lastName: {
         type: String,
         required: true,
-    }
+    },
+    permission: {
+        type: String,
+        default: 'user',
+    },
 });
 
 const User = model('User', userSchema);
@@ -35,6 +39,7 @@ export interface UserType {
     email: string,
     firstName: string,
     lastName: string,
+    permission: permissionType,
 };
 
 export default User;

@@ -25,7 +25,7 @@ router
             })
             return;
         }
-        jwt.sign({ id: user._id }, config.privateKey, { expiresIn: config.jwt.expiration }, (err, token) => {
+        jwt.sign(user, config.privateKey, { expiresIn: config.jwt.expiration }, (err, token) => {
             if (err) {
                 console.log("Error 1: ", err)
                 res.status(500).json({
